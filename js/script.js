@@ -18,13 +18,21 @@ Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
 
-function displayPage(list) {
- //  let startIndex = (page * itemsPerPage) - itemsPerPage;
- //  let endIndex = (page * itemsPerPage);
+/**
+ * [showPage - This function will create and insert/append the elements needed to display a "page" of nine students]
+ *
+ * @param {[array of objects]} list - [array of student objects - further it will be from data.js file]
+ * @param {[number]} page - [page number, each page will consist from 9 students]
+ * @returns {[objects]} [inserts 9 students on each page in the browser window]
+ */
+
+function showPage(list, page) {
+   let startIndex = (page * 9) - 9;  // 1page --0  2page --9  3page --18 4page --27 5page --36
+   let endIndex = (page * 9);        // 1page --8  2page --17 3page --26 4page --35 5page --44
    const listPage = document.querySelector('.student-list');
    listPage.innerHTML = '';
    
-   for (let i = 0; i < list.length; i++) {
+   for (let i = startIndex;  i >= startIndex && i < endIndex; i++) {
       console.log(list[i]);
       listPage.innerHTML += 
       `
@@ -40,13 +48,8 @@ function displayPage(list) {
       </li>
       `
       ;
-
-
    }
 }
-
-displayPage(data);
-
 
 
 /*
@@ -56,4 +59,10 @@ This function will create and insert/append the elements needed for the paginati
 
 
 
+
+
+
+
 // Call functions
+
+showPage(data, 1);
