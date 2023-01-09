@@ -60,6 +60,14 @@ Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
 
+/**
+ * [addPagination - This function will create and insert/append the elements needed for the pagination buttons]
+ *
+ * @param {[no parameter]} noparam - [array of student objects - further it will be from data.js file]
+ * @returns {[objects]} [inserts 5 buttons at the bottom of th page and makes them inderactive by calling show page function inside addEventListener]
+ */
+
+
 function addPagination() {
    let pages = 5;
    const linkList = document.querySelector('.link-list');
@@ -95,6 +103,7 @@ addPagination();
 
 //---------- Extra Credit -------------------------//
 
+// 1. Add search component:
 const header = document.querySelector('header');
 
 window.addEventListener('load', (e) => {
@@ -108,3 +117,5 @@ window.addEventListener('load', (e) => {
    `
    ;
 });
+
+// 2. Add functionlity to search component:
