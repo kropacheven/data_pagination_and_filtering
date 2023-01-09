@@ -29,6 +29,9 @@ This function will create and insert/append the elements needed to display a "pa
 function showPage(list, page) {
    let startIndex = (page * 9) - 9;  // 1page --0  2page --9  3page --18 4page --27 5page --36
    let endIndex = (page * 9);        // 1page --8  2page --17 3page --26 4page --35 5page --44
+   if (endIndex > 42) {
+      endIndex = 42;
+   }
    const listPage = document.querySelector('.student-list');
    listPage.innerHTML = '';
    
@@ -38,7 +41,7 @@ function showPage(list, page) {
       `
       <li class="student-item cf">
       <div class="student-details">
-        <img class="avatar" src="${list[i].picture.thumbnail}" alt="Profile Picture">
+        <img class="avatar" src="${list[i].picture.thumbnail}" alt="${list[i].name.first} ${list[i].name.last}">
         <h3> ${list[i].name.first} ${list[i].name.last}</h3>
         <span class="email"> ${list[i].email} </span>
       </div>
