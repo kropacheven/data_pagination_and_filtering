@@ -33,7 +33,7 @@ function showPage(list, page) {
    listPage.innerHTML = '';
    
    for (let i = startIndex;  i >= startIndex && i < endIndex; i++) {
-      console.log(list[i]);
+//      console.log(list[i]);
       listPage.innerHTML += 
       `
       <li class="student-item cf">
@@ -68,17 +68,21 @@ function addPagination() {
       </li>
       `
    }
-   // const active = document.querySelector('.active');
-   // active.addEventListener('click', () => {
-   //    showPage(data, i)
-   // });
+   showPage(data, 1);
+   let active = document.querySelectorAll('.active');
+   console.log(active);
+   for (let j = 0; j < active.length; j++) {
+      active[j].addEventListener('click', () => {
+      showPage(data, [j+1])
+   });
+   }
 }
 
 
 // Call functions:
 
 //1) Show page:
-showPage(data, 1);
+//showPage(data, 1);
 
 //2) Add pagination:
 addPagination();
