@@ -64,17 +64,21 @@ function addPagination() {
    for (let i = 1; i <= pages; i++) {
       linkList.innerHTML +=  `
       <li>
-         <button type="button">${i}</button>
+         <button class='active' type="button">${i}</button>
       </li>
       `
    }
+   // const active = document.querySelector('.active');
+   // active.addEventListener('click', () => {
+   //    showPage(data, i)
+   // });
 }
 
 
 // Call functions:
 
-//1)
+//1) Show page:
 showPage(data, 1);
 
-//2)
+//2) Add pagination:
 addPagination();
