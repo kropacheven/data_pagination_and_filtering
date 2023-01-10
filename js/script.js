@@ -118,7 +118,7 @@ window.addEventListener('load', (e) => {
    <div class='searchDiv'>
       <label for="search" class="student-search">
       <span>Search by name</span>
-      <input id="search" placeholder="Search by name..." value='igo'>
+      <input id="search" placeholder="Search by name..."s>
       <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
       </label>
    </div>
