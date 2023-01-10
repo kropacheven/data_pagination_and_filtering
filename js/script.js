@@ -63,7 +63,7 @@ This function will create and insert/append the elements needed for the paginati
 /**
  * [addPagination - This function will create and insert/append the elements needed for the pagination buttons]
  *
- * @param {[no parameter]} noparam - [array of student objects - further it will be from data.js file]
+ * @param {[array of objects]} lisr - [array of student objects - further it will be from data.js file]
  * @returns {[objects]} [inserts 5 buttons at the bottom of th page and makes them inderactive by calling show page function inside addEventListener]
  */
 
