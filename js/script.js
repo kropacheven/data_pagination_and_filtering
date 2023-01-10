@@ -124,9 +124,11 @@ window.addEventListener('load', (e) => {
    </div>
    `
    );
+// 2. Add functionlity to search component:
+   const search = document.querySelector('input');
+   console.log(search);
+
 });
 
-// 2. Add functionlity to search component:
 
-const search = document.querySelector('input');
-console.log(search);
+
