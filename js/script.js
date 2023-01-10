@@ -116,13 +116,18 @@ const header = document.querySelector('header');
 window.addEventListener('load', (e) => {
    header.innerHTML += 
    `
-   <label for="search" class="student-search">
-   <span>Search by name</span>
-   <input id="search" placeholder="Search by name...">
-   <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
-   </label>
+   <div class='searchDiv'>
+      <label for="search" class="student-search">
+      <span>Search by name</span>
+      <input id="search" placeholder="Search by name..." value='igo'>
+      <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+      </label>
+   </div>
    `
    ;
 });
 
 // 2. Add functionlity to search component:
+
+const search = document.querySelector('input');
+console.log(search);
