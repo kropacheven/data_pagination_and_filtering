@@ -37,7 +37,7 @@ function showPage(list, page) {
    
    for (let i = startIndex;  i >= startIndex && i < endIndex; i++) {
 //      console.log(list[i]);
-      listPage.innerHTML += 
+      listPage.insertAdjacentHTML( 'beforeend',
       `
       <li class="student-item cf">
       <div class="student-details">
@@ -50,7 +50,7 @@ function showPage(list, page) {
       </div>
       </li>
       `
-      ;
+      );
    }
 }
 
@@ -73,11 +73,12 @@ function addPagination(list) {
    const linkList = document.querySelector('.link-list');
    linkList.innerHTML = '';
    for (let i = 1; i <= pages; i++) {
-      linkList.innerHTML +=  `
+      linkList.insertAdjacentHTML('beforeend',  `
       <li>
          <button class='active' type="button">${i}</button>
       </li>
       `
+      );
    }
    showPage(list, 1);
    linkList.addEventListener('click', (event) => {
@@ -106,15 +107,13 @@ function addPagination(list) {
 addPagination(data);
 
 
-
-
 //---------- Extra Credit -------------------------//
 
 // 1. Add search component:
 const header = document.querySelector('header');
 
 window.addEventListener('load', (e) => {
-   header.innerHTML += 
+   header.insertAdjacentHTML( 'beforeend', 
    `
    <div class='searchDiv'>
       <label for="search" class="student-search">
@@ -124,7 +123,7 @@ window.addEventListener('load', (e) => {
       </label>
    </div>
    `
-   ;
+   );
 });
 
 // 2. Add functionlity to search component:
