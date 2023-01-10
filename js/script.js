@@ -80,14 +80,20 @@ function addPagination() {
       `
    }
    showPage(data, 1);
-   let active = document.querySelectorAll('.active');
-   console.log(active);
-   for (let j = 0; j < active.length; j++) {
-      active[j].addEventListener('click', () => {
-      showPage(data, [j+1])
+   linkList.addEventListener('click', (event) => {
+      showPage(data, event.target.textContent);
+      console.log( showPage(data, event.target.textContent) )
    });
-   }
+
 }
+
+// let active = document.querySelectorAll('.active');
+// console.log(active);
+// for (let j = 0; j < active.length; j++) {
+//    active[j].addEventListener('click', () => {
+//    showPage(data, [j+1])
+// });
+// }
 
 
 // Call functions:
