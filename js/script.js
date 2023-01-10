@@ -68,7 +68,7 @@ This function will create and insert/append the elements needed for the paginati
  */
 
 
-function addPagination() {
+function addPagination(list) {
    let pages = 5;
    const linkList = document.querySelector('.link-list');
    linkList.innerHTML = '';
@@ -79,14 +79,15 @@ function addPagination() {
       </li>
       `
    }
-   showPage(data, 1);
+   showPage(list, 1);
    linkList.addEventListener('click', (event) => {
-      showPage(data, event.target.textContent);
-      console.log( showPage(data, event.target.textContent) )
+      showPage(list, event.target.textContent);
+      console.log( showPage(list, event.target.textContent) )
    });
-
 }
 
+
+//---------------------------------First (old) add event listener with loop structure chunk:
 // let active = document.querySelectorAll('.active');
 // console.log(active);
 // for (let j = 0; j < active.length; j++) {
@@ -102,7 +103,7 @@ function addPagination() {
 //showPage(data, 1);
 
 //2) Add pagination:
-addPagination();
+addPagination(data);
 
 
 
