@@ -75,15 +75,19 @@ function addPagination(list) {
    for (let i = 1; i <= pages; i++) {
       linkList.insertAdjacentHTML('beforeend',  `
       <li>
-         <button class='active' type="button">${i}</button>
+         <button type="button">${i}</button>
       </li>
       `
       );
    }
+   const active = linkList.firstElementChild.firstElementChild;
+   active.className = 'active';
+
    showPage(list, 1);
    linkList.addEventListener('click', (event) => {
       showPage(list, event.target.textContent);
-      console.log( showPage(list, event.target.textContent) )
+      console.log( showPage(list, event.target.textContent) );
+      event.target.className = 'active';
    });
 }
 
