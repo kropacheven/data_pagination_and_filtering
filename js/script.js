@@ -110,25 +110,34 @@ addPagination(data);
 //---------- Extra Credit -------------------------//
 
 // 1. Add search component:
-const header = document.querySelector('header');
+// const header = document.querySelector('header');
 
-window.addEventListener('load', (e) => {
-   header.insertAdjacentHTML( 'beforeend', 
-   `
-   <div class='searchDiv'>
-      <label for="search" class="student-search">
-      <span>Search by name</span>
-      <input id="search" placeholder="Search by name..."s>
-      <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
-      </label>
-   </div>
-   `
-   );
+// window.addEventListener('load', (e) => {
+//    header.insertAdjacentHTML( 'beforeend', 
+//    `
+//    <form id='searchBar'>
+//       <label for="search" class="student-search">
+//       <span>Search by name</span>
+//       <input id="search" placeholder="Search by name..."s>
+//       <button type="submit" name="submit" value="submit"><img src="img/icn-search.svg" alt="Search icon"></button>
+//       </label>
+//    </form>
+//    `
+//    );
+// });
+
+
+
 // 2. Add functionlity to search component:
-   const search = document.querySelector('input');
-   console.log(search);
+const form = document.querySelector('#searchBar');
+const input = form.querySelector('#search');
 
+console.log(form);
+console.log(input);
+
+form.addEventListener('submit', (e) => {
+   e.preventDefault();
+   let text = input.value;
+   input.value = '';
+   console.log(text);
 });
-
-
-
