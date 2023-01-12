@@ -195,7 +195,9 @@ header h2 {
 	margin-bottom: 15px;
 }
 
-
+.match {
+  border: 1px solid lightgrey;
+}
 
 @media screen and (min-width: 700px) {
 

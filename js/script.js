@@ -130,7 +130,7 @@ addPagination(data);
 //       <label for="search" class="student-search">
 //       <span>Search by name</span>
 //       <input id="search" placeholder="Search by name..."s>
-//       <button type="submit" name="submit" value="submit"><img src="img/icn-search.svg" alt="Search icon"></button>
+//       <button id='submit' type="submit" name="submit" value="submit"><img src="img/icn-search.svg" alt="Search icon"></button>
 //       </label>
 //    </form>
 //    `
@@ -142,40 +142,45 @@ addPagination(data);
 // 2. Add functionlity to search component:
 const form = document.querySelector('#searchBar');
 const input = form.querySelector('#search');
-
-
-function getNames(data) {
-   let dataNames = [];
-  for (let prop in data) {
-      dataNames.push(data[prop].name.first);
-      console.log(dataNames)
-     }
-}
-
-const filterNames = getNames(data);
-
-//const dataNames = data[0];
+const submit = form.querySelector('#submit');
+const dataNames = document.getElementsByTagName('h3');
 
 console.log(form);
 console.log(input);
-console.log(filterNames);
+console.log(submit);
+console.log(dataNames);
 
-// function searchItems(searchInput, names) {
-//    for (let i = 0; i < names.length; i++ ) {
-//    names[i].className = '';
-//     if (names[i].textContent.toLowerCase().includes(searchInput.value.toLowerCase() ) ) {
-//       names[i].className = 'match';
-//       console.log(names[i])
-//       console.log(searchInput.value)
-//     }
-//    }
-//   }
 
-// console.log (searchItems(input, dataNames));
+function searchItems(searchInput, names) {
+   for (let i = 0; i < names.length; i++ ) {
+   names[i].className = '';
+    if (names[i].textContent.toLowerCase().includes(searchInput.value.toLowerCase() ) ) {
+      names[i].className = 'match';
+      console.log(names[i])
+      console.log(searchInput.value)
+    }
+   }
+  }
 
-// form.addEventListener('submit', (e) => {
-//    e.preventDefault();
-//    let text = input.value;
-//    input.value = '';
-//    console.log(text);
-// });
+console.log (searchItems(input, dataNames) );
+
+
+/**
+ * Event listeners for buttons - Invoke your search function in the body of the callbacks in the event listeners below
+ */
+
+/* 1) submit listener */
+submit.addEventListener('click', (event) => {
+   event.preventDefault();
+   searchItems(input, dataNames);
+   // Helpful log statement to test function
+   console.log('Submit button is functional!');
+ });
+ 
+ /* 2) keyup listener */
+ input.addEventListener('keyup', () => {
+   searchItems(input, dataNames);
+   // Helpful log statement to test function
+   console.log('Keyup event on the Search input is functional!');
+ });
+
