@@ -120,8 +120,9 @@ addPagination(data);
 //---------- Extra Credit -------------------------//
 
 // 1. Add search component:
-// const header = document.querySelector('header');
+ 
 
+//const header = document.querySelector('header');
 // window.addEventListener('load', (e) => {
 //    header.insertAdjacentHTML( 'beforeend', 
 //    `
@@ -142,12 +143,39 @@ addPagination(data);
 const form = document.querySelector('#searchBar');
 const input = form.querySelector('#search');
 
+
+function getNames(data) {
+   let dataNames = [];
+  for (let prop in data) {
+      dataNames.push(data[prop].name.first);
+      console.log(dataNames)
+     }
+}
+
+const filterNames = getNames(data);
+
+//const dataNames = data[0];
+
 console.log(form);
 console.log(input);
+console.log(filterNames);
 
-form.addEventListener('submit', (e) => {
-   e.preventDefault();
-   let text = input.value;
-   input.value = '';
-   console.log(text);
-});
+// function searchItems(searchInput, names) {
+//    for (let i = 0; i < names.length; i++ ) {
+//    names[i].className = '';
+//     if (names[i].textContent.toLowerCase().includes(searchInput.value.toLowerCase() ) ) {
+//       names[i].className = 'match';
+//       console.log(names[i])
+//       console.log(searchInput.value)
+//     }
+//    }
+//   }
+
+// console.log (searchItems(input, dataNames));
+
+// form.addEventListener('submit', (e) => {
+//    e.preventDefault();
+//    let text = input.value;
+//    input.value = '';
+//    console.log(text);
+// });
