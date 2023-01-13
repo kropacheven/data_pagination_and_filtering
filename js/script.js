@@ -138,49 +138,39 @@ addPagination(data);
 // });
 
 
-
 // 2. Add functionlity to search component:
 const form = document.querySelector('#searchBar');
 const input = form.querySelector('#search');
 const submit = form.querySelector('#submit');
-const dataNames = document.getElementsByTagName('h3');
+let studentAll = data;
 
 console.log(form);
 console.log(input);
 console.log(submit);
-console.log(dataNames);
-
-
-function searchItems(searchInput, names) {
-   for (let i = 0; i < names.length; i++ ) {
-   names[i].className = '';
-    if (names[i].textContent.toLowerCase().includes(searchInput.value.toLowerCase() ) ) {
-      names[i].className = 'match';
-      console.log(names[i])
-      console.log(searchInput.value)
-    }
-   }
-  }
-
-console.log (searchItems(input, dataNames) );
-
+console.log(studentAll);
 
 /**
  * Event listeners for buttons - Invoke your search function in the body of the callbacks in the event listeners below
  */
 
 /* 1) submit listener */
-submit.addEventListener('click', (event) => {
-   event.preventDefault();
-   searchItems(input, dataNames);
-   // Helpful log statement to test function
-   console.log('Submit button is functional!');
- });
+// submit.addEventListener('click', (event) => {
+//    event.preventDefault();
+//    searchItems(input, dataNames);
+//    // Helpful log statement to test function
+//    console.log('Submit button is functional!');
+//  });
  
  /* 2) keyup listener */
  input.addEventListener('keyup', () => {
-   searchItems(input, dataNames);
-   // Helpful log statement to test function
-   console.log('Keyup event on the Search input is functional!');
+   let matchStudent = [];
+   for (const student of studentAll) {
+      let sumName = `${student.name.first} ${student.name.last}`.toLowerCase();
+      if (sumName.includes( input.value.toLowerCase() ) ) {
+         matchStudent.push(student);
+      }
+   }
+   showPage(matchStudent, 1);
+   addPagination(matchStudent);
  });
 
