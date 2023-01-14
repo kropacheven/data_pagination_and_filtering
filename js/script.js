@@ -67,9 +67,11 @@ This function will create and insert/append the elements needed for the paginati
  * @returns {[objects]} [inserts 5 buttons at the bottom of th page and makes them inderactive by calling show page function inside addEventListener]
  */
 
+let pages;
 
 function addPagination(list) {
-   let pages = 5;
+   pages = parseInt((Math.floor(list.length/9))+1);
+   console.log(pages);
    const linkList = document.querySelector('.link-list');
    linkList.innerHTML = '';
    for (let i = 1; i <= pages; i++) {
@@ -170,7 +172,7 @@ console.log(studentAll);
          matchStudent.push(student);
       }
    }
-   showPage(matchStudent, 1);
+   //showPage(matchStudent);
    addPagination(matchStudent);
  });
 
