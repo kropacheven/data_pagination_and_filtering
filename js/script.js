@@ -11,8 +11,7 @@ For assistance:
    Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
 */
 
-
-
+const listPage = document.querySelector('.student-list');
 /*
 Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
@@ -176,9 +175,15 @@ submit.addEventListener('click', (event) => {
       let sumName = `${student.name.first} ${student.name.last}`.toLowerCase();
       if (sumName.includes( input.value.toLowerCase() ) ) {
          matchStudent.push(student);
-      }
+      } 
+      
    }
    //showPage(matchStudent);
+   console.log(matchStudent);
    addPagination(matchStudent);
+   if (matchStudent.length === 0) {
+      listPage.insertAdjacentHTML('beforebegin', '<p>No search found</p>');
+   }
+   
  });
 
