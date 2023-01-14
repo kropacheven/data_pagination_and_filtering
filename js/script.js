@@ -156,12 +156,18 @@ console.log(studentAll);
  */
 
 /* 1) submit listener */
-// submit.addEventListener('click', (event) => {
-//    event.preventDefault();
-//    searchItems(input, dataNames);
-//    // Helpful log statement to test function
-//    console.log('Submit button is functional!');
-//  });
+submit.addEventListener('click', (event) => {
+   event.preventDefault();
+   let matchStudent = [];
+   for (const student of studentAll) {
+      let sumName = `${student.name.first} ${student.name.last}`.toLowerCase();
+      if (sumName.includes( input.value.toLowerCase() ) ) {
+         matchStudent.push(student);
+      }
+   }
+   //showPage(matchStudent);
+   addPagination(matchStudent);
+ });
  
  /* 2) keyup listener */
  input.addEventListener('keyup', () => {
