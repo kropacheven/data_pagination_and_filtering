@@ -3,8 +3,6 @@ Treehouse Techdegree:
 FSJS Project 2 - Data Pagination and Filtering
 */
 
-
-
 /*
 For assistance:
    Check out the "Project Resources" section of the Instructions tab: https://teamtreehouse.com/projects/data-pagination-and-filtering#instructions
@@ -20,7 +18,7 @@ This function will create and insert/append the elements needed to display a "pa
 /**
  * [showPage - This function will create and insert/append the elements needed to display a "page" of nine students]
  *
- * @param {[array of objects]} list - [array of student objects - further it will be from data.js file]
+ * @param {[array of objects]} list - [array of student objects - further when calling a function it will be from data.js file]
  * @param {[number]} page - [page number, each page will consist from 9 students]
  * @returns {[objects]} [inserts 9 students on each page in the browser window]
  */
@@ -179,9 +177,9 @@ submit.addEventListener('click', (event) => {
    //showPage(matchStudent);
    console.log(matchStudent);
    addPagination(matchStudent);
-   if (matchStudent.length === 0) {
-      listPage.insertAdjacentHTML('beforebegin', '<p>No search found</p>');
-   }   
+   // if (matchStudent.length === 0) {
+   //    listPage.insertAdjacentHTML('beforebegin', '<p>No search found</p>');
+   // }   
  });
 
 });
