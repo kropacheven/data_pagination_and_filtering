@@ -91,7 +91,7 @@ function addPagination(list) {
 addPagination(data);
 
 
-//---------- Extra Credit -------------------------//
+//------------------------------------------- Extra Credit -------------------------------------------------//
 
 // 1. Add search component interactively:
 const header = document.querySelector('header');
