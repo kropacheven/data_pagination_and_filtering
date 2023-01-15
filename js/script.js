@@ -87,12 +87,8 @@ function addPagination(list) {
    });
 }
 
-
-
-
 // Call addPagination function with data array of objects as an argument:
 addPagination(data);
-
 
 
 //---------- Extra Credit -------------------------//
