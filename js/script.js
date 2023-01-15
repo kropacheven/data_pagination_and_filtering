@@ -10,26 +10,22 @@ For assistance:
 */
 
 const listPage = document.querySelector('.student-list');
-/*
-Create the `showPage` function
-This function will create and insert/append the elements needed to display a "page" of nine students
-*/
 
 /**
  * [showPage - This function will create and insert/append the elements needed to display a "page" of nine students]
  *
  * @param {[array of objects]} list - [array of student objects - further when calling a function it will be from data.js file]
- * @param {[number]} page - [page number, each page will consist from 9 students]
+ * @param {[number]} page - [page number, each page will consist of 9 students]
  * @returns {[objects]} [inserts 9 students on each page in the browser window]
  */
 
 function showPage(list, page) {
-   let startIndex = (page * 9) - 9;  // 1page --0  2page --9  3page --18 4page --27 5page --36
-   let endIndex = (page * 9);        // 1page --8  2page --17 3page --26 4page --35 5page --44
+   let startIndex = (page * 9) - 9;  // if 1page --0  2page --9  3page --18 4page --27 5page --36
+   let endIndex = (page * 9);        // if 1page --8  2page --17 3page --26 4page --35 5page --44
    if (endIndex > 42) {   // extra if statement -added to handle error console message when clicking on page 5  
       endIndex = 42;
    }
-   const listPage = document.querySelector('.student-list');
+   const listPage = document.querySelector('.student-list'); // - selecting main 'ul' element
    listPage.innerHTML = '';
    
    for (let i = startIndex;  i >= startIndex && i < endIndex; i++) {
@@ -52,15 +48,10 @@ function showPage(list, page) {
 }
 
 
-/*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
-*/
-
 /**
- * [addPagination - This function will create and insert/append the elements needed for the pagination buttons]
+ * addPagination - This function will create and insert/append the elements needed for the pagination buttons
  *
- * @param {[array of objects]} lisr - [array of student objects - further it will be from data.js file]
+ * @param {[array of objects]} list - [array of student objects - further it will be from data.js file]
  * @returns {[objects]} [inserts 5 buttons at the bottom of th page and makes them inderactive by calling show page function inside addEventListener]
  */
 
@@ -97,30 +88,16 @@ function addPagination(list) {
 }
 
 
-//---------------------------------First (old) add event listener with loop structure chunk:
-// let active = document.querySelectorAll('.active');
-// console.log(active);
-// for (let j = 0; j < active.length; j++) {
-//    active[j].addEventListener('click', () => {
-//    showPage(data, [j+1])
-// });
-// }
 
 
-// Call functions:
-
-//1) Show page:
-//showPage(data, 1);
-
-//2) Add pagination:
+// Call addPagination function with data array of objects as an argument:
 addPagination(data);
+
 
 
 //---------- Extra Credit -------------------------//
 
-// 1. Add search component:
- 
-
+// 1. Add search component interactively:
 const header = document.querySelector('header');
 window.addEventListener('load', (e) => {
    header.insertAdjacentHTML( 'beforeend', 
@@ -146,9 +123,6 @@ let studentAll = data;
 //console.log(submit);
 //console.log(studentAll);
 
-/**
- * Event listeners for buttons - Invoke your search function in the body of the callbacks in the event listeners below
- */
 
 /* 1) submit listener */
 submit.addEventListener('click', (event) => {
@@ -163,6 +137,7 @@ submit.addEventListener('click', (event) => {
    //showPage(matchStudent);
    addPagination(matchStudent);
  });
+ 
  
  /* 2) keyup listener */
  input.addEventListener('keyup', () => {
