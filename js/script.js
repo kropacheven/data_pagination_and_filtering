@@ -29,7 +29,7 @@ function showPage(list, page) {
    listPage.innerHTML = '';
    
    for (let i = startIndex;  i >= startIndex && i < endIndex; i++) {
-//      console.log(list[i]);
+      //console.log(list[i]);
       listPage.insertAdjacentHTML( 'beforeend',
       `
       <li class="student-item cf">
@@ -59,7 +59,7 @@ let pages;
 
 function addPagination(list) {
    pages = parseInt((Math.floor(list.length/9))+1);
-   console.log(pages);
+   //console.log(pages);
    const linkList = document.querySelector('.link-list');
    linkList.innerHTML = '';
    for (let i = 1; i <= pages; i++) {
@@ -69,6 +69,7 @@ function addPagination(list) {
       </li>
       `
       );
+      console.log(i);
    }
    const active = linkList.firstElementChild.firstElementChild;
    active.className = 'active';
@@ -76,9 +77,9 @@ function addPagination(list) {
    showPage(list, 1);
    linkList.addEventListener('click', (event) => {
       showPage(list, event.target.textContent);
-      console.log( showPage(list, event.target.textContent) );
+      //console.log( showPage(list, event.target.textContent) );
       const lis = linkList.children;
-      console.log(lis);
+      //console.log(lis);
       for (let i = 0; i < lis.length; i++ ) {
          lis[i].firstElementChild.removeAttribute("class");
       };
