@@ -136,7 +136,7 @@ submit.addEventListener('click', (event) => {
    addPagination(matchStudent);   
    // if there is no match new <p> element with content not-found will be inserted, but disappears when there is a match
     if (matchStudent.length === 0) {
-       listPage.insertAdjacentHTML('beforebegin', '<p class="not-found">"No search found"</p>');
+       listPage.insertAdjacentHTML('beforebegin', '<p class="not-found">No results</p>');
     } else {
       const notFound = document.querySelectorAll('.not-found');
       for (let i = 0; i < notFound.length; i++) {
@@ -162,7 +162,7 @@ submit.addEventListener('click', (event) => {
    addPagination(matchStudent); 
    // if there is no match new <p> element with content not-found will be inserted, but disappears when there is a match
     if (matchStudent.length === 0) {
-       listPage.insertAdjacentHTML('beforebegin', '<p class="not-found">"No search found"</p>');
+       listPage.insertAdjacentHTML('beforebegin', '<p class="not-found">No results</p>');
     } else {
       const notFound = document.querySelectorAll('.not-found');
       for (let i = 0; i < notFound.length; i++) {
