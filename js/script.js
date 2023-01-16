@@ -135,6 +135,7 @@ submit.addEventListener('click', (event) => {
    addPagination(matchStudent);
  });
  
+
  
  /* 2) keyup listener */
  input.addEventListener('keyup', () => {
@@ -150,8 +151,14 @@ submit.addEventListener('click', (event) => {
    console.log(matchStudent);
    addPagination(matchStudent);
     if (matchStudent.length === 0) {
-       listPage.insertAdjacentHTML('beforebegin', '<p>No search found</p>');
-    } 
+       listPage.insertAdjacentHTML('beforebegin', '<p class="not-found">"No search found"</p>');
+    } else {
+      const notFound = document.querySelectorAll('.not-found');
+      for (let i = 0; i < notFound.length; i++) {
+      notFound[i].style.display = 'none';
+      }
+    }
+
  });
 
 });
