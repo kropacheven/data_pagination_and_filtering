@@ -69,7 +69,7 @@ function addPagination(list) {
       </li>
       `
       );
-      console.log(i);
+      //console.log(i);
    }
    const active = linkList.firstElementChild.firstElementChild;
    active.className = 'active';
@@ -131,8 +131,18 @@ submit.addEventListener('click', (event) => {
          matchStudent.push(student);
       }
    }
-   //showPage(matchStudent);
-   addPagination(matchStudent);
+   //showPage(matchStudent) - insert a filtered data list of students to addPagination function;;
+   //console.log(matchStudent);
+   addPagination(matchStudent);   
+   // if there is no match new <p> element with content not-found will be inserted, but disappears when there is a match
+    if (matchStudent.length === 0) {
+       listPage.insertAdjacentHTML('beforebegin', '<p class="not-found">"No search found"</p>');
+    } else {
+      const notFound = document.querySelectorAll('.not-found');
+      for (let i = 0; i < notFound.length; i++) {
+      notFound[i].style.display = 'none';
+      }
+    }
  });
  
 
@@ -147,9 +157,10 @@ submit.addEventListener('click', (event) => {
       } 
       
    }
-   //showPage(matchStudent);
-   console.log(matchStudent);
-   addPagination(matchStudent);
+   //showPage(matchStudent) - insert a filtered data list of students to addPagination function;
+   //console.log(matchStudent);
+   addPagination(matchStudent); 
+   // if there is no match new <p> element with content not-found will be inserted, but disappears when there is a match
     if (matchStudent.length === 0) {
        listPage.insertAdjacentHTML('beforebegin', '<p class="not-found">"No search found"</p>');
     } else {
@@ -163,5 +174,5 @@ submit.addEventListener('click', (event) => {
 
 });
 
-
+// * - Code block for submit and keyup event listeners is the same except for an event object
 
