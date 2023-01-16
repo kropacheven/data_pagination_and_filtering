@@ -22,7 +22,7 @@ const listPage = document.querySelector('.student-list');
 function showPage(list, page) {
    let startIndex = (page * 9) - 9;  // if 1page --0  2page --9  3page --18 4page --27 5page --36
    let endIndex = (page * 9);        // if 1page --8  2page --17 3page --26 4page --35 5page --44
-   if (endIndex > list.length) {   // extra if statement -added to handle error console message when clicking on page 5  
+   if (endIndex > list.length) {   // extra if statement -added to handle error for the last page and first on search;  
       endIndex = list.length;
    }
    const listPage = document.querySelector('.student-list'); // - selecting main 'ul' element
@@ -149,9 +149,9 @@ submit.addEventListener('click', (event) => {
    //showPage(matchStudent);
    console.log(matchStudent);
    addPagination(matchStudent);
-   // if (matchStudent.length === 0) {
-   //    listPage.insertAdjacentHTML('beforebegin', '<p>No search found</p>');
-   // }   
+    if (matchStudent.length === 0) {
+       listPage.insertAdjacentHTML('beforebegin', '<p>No search found</p>');
+    } 
  });
 
 });
