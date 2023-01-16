@@ -22,8 +22,8 @@ const listPage = document.querySelector('.student-list');
 function showPage(list, page) {
    let startIndex = (page * 9) - 9;  // if 1page --0  2page --9  3page --18 4page --27 5page --36
    let endIndex = (page * 9);        // if 1page --8  2page --17 3page --26 4page --35 5page --44
-   if (endIndex > 42) {   // extra if statement -added to handle error console message when clicking on page 5  
-      endIndex = 42;
+   if (endIndex > list.length) {   // extra if statement -added to handle error console message when clicking on page 5  
+      endIndex = list.length;
    }
    const listPage = document.querySelector('.student-list'); // - selecting main 'ul' element
    listPage.innerHTML = '';
