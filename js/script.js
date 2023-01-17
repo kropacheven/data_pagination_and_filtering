@@ -76,14 +76,18 @@ function addPagination(list) {
 
    showPage(list, 1);
    linkList.addEventListener('click', (event) => {
-      showPage(list, event.target.textContent);
-      //console.log( showPage(list, event.target.textContent) );
-      const lis = linkList.children;
-      //console.log(lis);
-      for (let i = 0; i < lis.length; i++ ) {
-         lis[i].firstElementChild.removeAttribute("class");
-      };
-      event.target.className = 'active';
+      if (event.target.tagName === 'BUTTON') {
+         showPage(list, event.target.textContent);
+
+         //console.log( showPage(list, event.target.textContent) );
+         const lis = linkList.children;
+         //console.log(lis);
+         for (let i = 0; i < lis.length; i++ ) {
+            lis[i].firstElementChild.removeAttribute("class");
+         };
+         event.target.className = 'active';
+      }
+
       
    });
 }
