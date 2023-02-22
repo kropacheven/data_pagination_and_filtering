@@ -8,3 +8,5 @@
  while searching pagination is also working depending on the amount of total matches.
 
  The app is build by using following tools: 'vanilla' Java script(variables, objects, functions, callbacks, loops and conditionals) implied together with the DOM interaction methods (selection, manipulation, traversal and event listening). 
+
+You can take a look at the project online: https://kropacheven.github.io/data_pagination_and_filtering/
